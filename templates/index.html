@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Sulla Montes</title>
+	<link rel="shortcut icon" href="assets/icon.png">
+
+	<meta charset="UTF-8">
+	<meta name="description" content="designer and programmer based in Dublin">
+	<meta name="keywords" content="Sulla Montes, Dublin, illustrator, graphic designer, programmer">
+	<meta name="author" content="Sulla Montes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+
+</head>
+
+<body>
+	<div id="body_wrap">
+		<div class="full_wrap">
+
+			<div class="header_wrap">
+				<div id="spotify" class="header">
+					<div class="now">NOW PLAYING ON MY SPOTIFY</div>
+					<strong>♫ <a href="{{ url }}" class="links_light">{{ name }}</a></strong>
+				</div>
+
+				<div class="header">
+					<h1>SULLA MONTES</h1>
+				</div>
+
+				<div id="nightmode" class="header">
+					<a id="night" onclick="nightmode()" class="links_light">nightmode on</a>
+				</div>
+			</div>
+
+			<div id="core">
+
+				<img src="/static/assets/ballerina.png">
+
+				<div class="caption">
+					<p>
+						<strong>illustrator<br>
+						graphic designer</br>
+						computer science undergrad</strong><br>
+						<i>@TrinityCollegeDublin</i>
+					</p>
+				</div>
+
+			</div>
+
+			<div class="email">
+				<a href="mailto:sullvivia@gmail.com" class="links_light">sullavivia@gmail.com</a>
+			</div>
+
+		</div>
+
+		<div class="full_wrap">
+			<div class="bio">
+				<p>
+					I'm <strong>Sulla</strong>, currently studying B.A. in Computer Science at <a href="http://www.tcd.ie" class="links_light">Trinity College Dublin</a>. I'm passionate about
+					building beautiful things. My favourite food is <i>pizza</i> and I like to spend most of my evenings exploring Dublin
+					or chasing my train home.
+				</p>
+				<p>
+					I draw, design for print/web and code. I'd love to do something cool with you – <a href="mailto:sullavivia@gmail.com"
+					class="links_light">sullavivia@gmail.com</a>.
+				</p>
+			</div>
+			<img src="/static/assets/portrait.JPG" class="portrait">
+
+			<div class="footer">
+				<div class="social">
+					<a href="http://github.com/sullaVM" class="links_light">github</a>
+					<a href="http://medium.com/@sullamontes" class="links_light">medium</a>
+					<a href="http://behance.net/sullamontes" class="links_light">behance</a>
+					<a href="http://instagram.com/sullamontes" class="links_light">instagram</a>
+					<a href="http://twitter.com/sullamontes" class="links_light">twitter</a>
+				</div>
+				<p>
+					Sulla M 2017 →
+				</p>
+					
+			</div>
+		</div>
+
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+	<script>
+
+		function nightmode() {
+			var state = document.getElementById("night").innerHTML;
+			var x = document.getElementsByTagName("BODY")[0];
+			var y = document.getElementsByTagName("A");
+
+			if (state == "nightmode off") {
+				state = "nightmode on";
+				x.setAttribute("style", "background: none; backgroundColor: #FFFFFF; color: #000000;");	
+				for (var i = 0; i < y.length; i++) {
+					y[i].className = "links_light";
+				}
+			} else {
+				state = "nightmode off";
+				x.setAttribute("style", "background: #394557; color: #FFFFFF;");
+				for (var i = 0; i < y.length; i++) {
+					y[i].className = "links_dark";
+				}
+			}
+			
+			document.getElementById("night").innerHTML = state;
+		}
+	</script>
+
+</body>
+
+</html>
